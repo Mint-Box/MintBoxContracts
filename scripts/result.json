@@ -1,0 +1,58 @@
+{
+	"merkleRoot": "0xc707e2ab25a886aec00d30f37efb74ca3c535b485f123297124044bb0608f584",
+	"total": 6,
+	"tokens": [
+		{
+			"uri": "ipfs://QmeRJYtfTkqzCVLUbvnhK3xf9mJoUyFezMFtvLzTMqdGCm/0.png",
+			"creator": "0xF1658C608708172655A8e70a1624c29F956Ee63D",
+			"proofs": [
+				"0x11ad96b175e89a7de1e79b40cfccde34ab00f032e5e807209f09ad0798266112",
+				"0x0bc5bf60d2b1aeb9d04774c5d35f13b675f60e620d32230f084f3232c575a5a2",
+				"0x09b08dd44a244b2b861fd43a95910d4f1822894827aff93f49be921d60e3078e"
+			]
+		},
+		{
+			"uri": "ipfs://QmeRJYtfTkqzCVLUbvnhK3xf9mJoUyFezMFtvLzTMqdGCm/1.png",
+			"creator": "0xF1658C608708172655A8e70a1624c29F956Ee63D",
+			"proofs": [
+				"0xb5fb1fceef48db0ac14639b4d9b3a5dda00a6d35bd26e7e8e2308b70ca77b56b",
+				"0x8128dfb6240bd1caddd07d454a9b14440864afe4e139372b5b37c5d14df80ecb"
+			]
+		},
+		{
+			"uri": "ipfs://QmeRJYtfTkqzCVLUbvnhK3xf9mJoUyFezMFtvLzTMqdGCm/2.png",
+			"creator": "0xF1658C608708172655A8e70a1624c29F956Ee63D",
+			"proofs": [
+				"0x8dd567b5d7392697cd589218afe8b103cf934daa3f1de0539cfa3c5450eaeb21",
+				"0x6ff1dad1519679b0b51ae8ec69b9ff5649380ae4582914e70180e3a091eb8489",
+				"0x09b08dd44a244b2b861fd43a95910d4f1822894827aff93f49be921d60e3078e"
+			]
+		},
+		{
+			"uri": "ipfs://QmeRJYtfTkqzCVLUbvnhK3xf9mJoUyFezMFtvLzTMqdGCm/3.png",
+			"creator": "0xF1658C608708172655A8e70a1624c29F956Ee63D",
+			"proofs": [
+				"0x770d73096d282a865de27b46f6b7b8550e958d762e78fcadd74d7102d02f50c3",
+				"0x0bc5bf60d2b1aeb9d04774c5d35f13b675f60e620d32230f084f3232c575a5a2",
+				"0x09b08dd44a244b2b861fd43a95910d4f1822894827aff93f49be921d60e3078e"
+			]
+		},
+		{
+			"uri": "ipfs://QmeRJYtfTkqzCVLUbvnhK3xf9mJoUyFezMFtvLzTMqdGCm/4.png",
+			"creator": "0xF1658C608708172655A8e70a1624c29F956Ee63D",
+			"proofs": [
+				"0x8a9dca21c91d6a51de954f981db9ec6a572f78e7e3f41dfa5dd7e4fce0686551",
+				"0x6ff1dad1519679b0b51ae8ec69b9ff5649380ae4582914e70180e3a091eb8489",
+				"0x09b08dd44a244b2b861fd43a95910d4f1822894827aff93f49be921d60e3078e"
+			]
+		},
+		{
+			"uri": "ipfs://QmeRJYtfTkqzCVLUbvnhK3xf9mJoUyFezMFtvLzTMqdGCm/5.png",
+			"creator": "0xF1658C608708172655A8e70a1624c29F956Ee63D",
+			"proofs": [
+				"0xc9c89369a77e7d41e309bf1560b92883dea172cd32c55ab6fce21e6d5d1ba81d",
+				"0x8128dfb6240bd1caddd07d454a9b14440864afe4e139372b5b37c5d14df80ecb"
+			]
+		}
+	]
+}
