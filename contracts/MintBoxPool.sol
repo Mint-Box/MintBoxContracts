@@ -16,7 +16,7 @@ contract MintBoxPool {
 	event Withdrawal(IERC20 token, address to, uint256 amount);
 
 	function deposit(IERC20 token, address to, uint256 amount) external {
-		token.safeTransferFrom(msg.sender, to, amount);
+		token.safeTransferFrom(msg.sender, address(this), amount);
 		pools[address(token)][to] = pools[address(token)][to].add(amount);
 	
 		emit Deposit(token, to, amount);
