@@ -54,8 +54,8 @@ contract ERC721SingleCollectionUpgradeable is ERC721UpgradeableWrapper, Collecti
 		IERC20 payToken = payToken();
 		if (value > 0) {
 			payToken.safeTransferFrom(msg.sender, address(this), value);
+			_depositPool(payToken, value);
 		}
-		_depositPool(payToken, value);
 		_mintToken(to, tokenId);
 		_safeMint(to, tokenId);
 		emit Payment(payToken, msg.sender, address(this), tokenId, value);

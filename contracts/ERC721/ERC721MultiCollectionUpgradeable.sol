@@ -74,8 +74,8 @@ contract ERC721MultiCollectionUpgradeable is ERC721UpgradeableWrapper, Collectio
 		IERC20 payToken = payToken();
 		if (value > 0) {
 			payToken.safeTransferFrom(msg.sender, address(this), value);
+			_depositPool(payToken, value);
 		}
-		_depositPool(payToken, value);
 		_mintToken(to, tokenId);
 		_mint(to, tokenId);
 

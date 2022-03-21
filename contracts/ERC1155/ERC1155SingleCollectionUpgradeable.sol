@@ -67,8 +67,8 @@ contract ERC1155SingleCollectionUpgradeable is ERC1155UpgradeableWrapper, Collec
 		value = valueOf(amount);
 		if (value > 0) {
 			payToken.safeTransferFrom(msg.sender, address(this), value);
+			_depositPool(payToken, value);
 		}
-		_depositPool(payToken, value);
 		_mintToken(to, tokenId, amount);
 		_mint(to, tokenId, amount, data);
 		emit Payment(payToken, msg.sender, address(this), tokenId, amount, value);

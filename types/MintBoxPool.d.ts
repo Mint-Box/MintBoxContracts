@@ -44,8 +44,8 @@ interface MintBoxPoolInterface extends ethers.utils.Interface {
   decodeFunctionResult(functionFragment: "withdraw", data: BytesLike): Result;
 
   events: {
-    "Deposit(address,address,uint256)": EventFragment;
-    "Withdrawal(address,address,uint256)": EventFragment;
+    "Deposit(address,address,address,uint256)": EventFragment;
+    "Withdrawal(address,address,address,uint256)": EventFragment;
   };
 
   getEvent(nameOrSignatureOrTopic: "Deposit"): EventFragment;
@@ -53,11 +53,21 @@ interface MintBoxPoolInterface extends ethers.utils.Interface {
 }
 
 export type DepositEvent = TypedEvent<
-  [string, string, BigNumber] & { token: string; to: string; amount: BigNumber }
+  [string, string, string, BigNumber] & {
+    from: string;
+    token: string;
+    to: string;
+    amount: BigNumber;
+  }
 >;
 
 export type WithdrawalEvent = TypedEvent<
-  [string, string, BigNumber] & { token: string; to: string; amount: BigNumber }
+  [string, string, string, BigNumber] & {
+    from: string;
+    token: string;
+    to: string;
+    amount: BigNumber;
+  }
 >;
 
 export class MintBoxPool extends BaseContract {
@@ -168,40 +178,44 @@ export class MintBoxPool extends BaseContract {
   };
 
   filters: {
-    "Deposit(address,address,uint256)"(
+    "Deposit(address,address,address,uint256)"(
+      from?: null,
       token?: null,
       to?: null,
       amount?: null
     ): TypedEventFilter<
-      [string, string, BigNumber],
-      { token: string; to: string; amount: BigNumber }
+      [string, string, string, BigNumber],
+      { from: string; token: string; to: string; amount: BigNumber }
     >;
 
     Deposit(
+      from?: null,
       token?: null,
       to?: null,
       amount?: null
     ): TypedEventFilter<
-      [string, string, BigNumber],
-      { token: string; to: string; amount: BigNumber }
+      [string, string, string, BigNumber],
+      { from: string; token: string; to: string; amount: BigNumber }
     >;
 
-    "Withdrawal(address,address,uint256)"(
+    "Withdrawal(address,address,address,uint256)"(
+      from?: null,
       token?: null,
       to?: null,
       amount?: null
     ): TypedEventFilter<
-      [string, string, BigNumber],
-      { token: string; to: string; amount: BigNumber }
+      [string, string, string, BigNumber],
+      { from: string; token: string; to: string; amount: BigNumber }
     >;
 
     Withdrawal(
+      from?: null,
       token?: null,
       to?: null,
       amount?: null
     ): TypedEventFilter<
-      [string, string, BigNumber],
-      { token: string; to: string; amount: BigNumber }
+      [string, string, string, BigNumber],
+      { from: string; token: string; to: string; amount: BigNumber }
     >;
   };
 

@@ -11,23 +11,27 @@ contract MintBoxPool {
 
 	mapping(address => mapping(address => uint256)) public pools;
 
-	event Deposit(IERC20 token, address to, uint256 amount);
+	event Deposit(address from, IERC20 token, address to, uint256 amount);
 
-	event Withdrawal(IERC20 token, address to, uint256 amount);
+	event Withdrawal(address from, IERC20 token, address to, uint256 amount);
 
 	function deposit(IERC20 token, address to, uint256 amount) external {
+		require(amount > 0, 'Pool: invalid amount');
+		require(to != address(0), 'Pool: invalid address');
 		token.safeTransferFrom(msg.sender, address(this), amount);
 		pools[address(token)][to] = pools[address(token)][to].add(amount);
 	
-		emit Deposit(token, to, amount);
+		emit Deposit(msg.sender, token, to, amount);
 	}
 
 	function withdraw(IERC20 token, address to, uint256 amount) external {
-		require(pools[address(token)][msg.sender] >= amount, 'Pool: no deposit.');
+		require(amount > 0, 'Pool: invalid amount');
+		require(to != address(0), 'Pool: invalid address');
+		require(pools[address(token)][msg.sender] >= amount, 'Pool: not enough deposit.');
 		pools[address(token)][msg.sender] = pools[address(token)][msg.sender].sub(amount);
 		token.safeTransfer(to, amount);
 	
-		emit Withdrawal(token, to, amount);
+		emit Withdrawal(msg.sender, token, to, amount);
 	}
 
 }
